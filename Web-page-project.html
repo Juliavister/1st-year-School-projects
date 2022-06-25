@@ -1,43 +1,45 @@
 <!doctype html>
 <html>
-
+ 
 <head>
 <meta charset="UTF-8">
 <title>ITWE Project 2</title>
 <link href="webstyling.css" rel="stylesheet" type="text/css">
 </head>
-
+ 
 <body>
+ 
+ 
+<header id="heading" style="font-size:32px;" "color:IndianRed;" >Juvi's header</header>
+<?php 
 
+$t = date('l-d-m-y');
 
-<header id="heading" style="font-size:32px;">Juvi's Header</header>
-<?php
-
-
+if($t = "Saturday"|| $t= "Sunday"){echo "color:#00008B";}
+else {echo "color:#000000";}
 ?>
-
-<nav>
-<div id="menu">	
+ 
+ 
+<nav id="menu">	
 <ul>
 <li> <a href="?id=1">Information about me</a> </li>
 <li> <a href="?id=2">List of my courses: winter semester</a> </li>
 <li> <a href="?id=3">List of my favorite artists</a> </li>
 <li> <a href="?id=4">Database operation</a></li>
 </ul>
-</div>
 </nav>
-
+ 
 <article id="contents">
 <?php
-	 if(empty($_GET["id"])) $_GET["id"]=1;
-	 if($_GET["id"]==1) include(«Home.txt»);
-	 if($_GET["id"]==2) include(«Courselist.txt");
-	 if($_GET["id"]==3) include(«Artists.txt");
-	 if($_GET["id"]==4) include(«Database.txt");
+	if(empty($_GET["id"])) $_GET["id"]=1;
+	if($_GET["id"]==1) include("home.txt");
+	if($_GET["id"]==2) include("Courselist.txt");
+	if($_GET["id"]==3) include("Artists.txt");
+	if($_GET["id"]==4) include("Database.txt");
 ?>
 </article>
-
-<footer id="foot" style="color:IndianRed;">My footer</footer>
-
+ 
+<footer id="foot">My footer</footer>
+ 
 </body>
 </html>
